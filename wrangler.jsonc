@@ -1,0 +1,10 @@
+{
+  // Web estática (Next.js output: "export" → out/) servida por Cloudflare Workers.
+  // Build command en Cloudflare: npm run build · Deploy command: npx wrangler deploy
+  "name": "javier3d",
+  "compatibility_date": "2026-11-21",
+  "assets": {
+    "directory": "./out/",
+    "not_found_handling": "404-page"
+  }
+}
