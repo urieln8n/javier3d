@@ -1,5 +1,11 @@
 # JAVA — Hornos profesionales para pizza
 
+**Lo que se publica ahora:** `web-premium/` — web premium 3D estática (Kit Webs 3D): el horno JAVA de mosaico dorado en 3D guiado por el scroll, las dos referencias con sus fotos, presupuesto por WhatsApp (+34 645 466 308), aviso legal, privacidad y cookies, librerías y fuentes locales. Es una DEMO: lleva `noindex` y `robots.txt`. El horno 3D es una maqueta conceptual hecha a partir de la fotografía, no un modelo técnico. Datos pendientes del titular: nombre o razón social, NIF y domicilio fiscal (páginas legales).
+
+La versión Next.js (v10) sigue en este repo, documentada abajo.
+
+# JAVA — Hornos profesionales para pizza
+
 One-page commercial website with product photography, qualified quote requests through WhatsApp and an optional cinematic 3D exploration.
 
 ## Local development

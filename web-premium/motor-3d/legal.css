@@ -1,0 +1,19 @@
+/* legal.css — Kit Webs 3D · páginas legales (aviso legal, privacidad, cookies). Ligeras: sin 3D ni librerías. */
+.m3d-legal {
+  margin: 0;
+  background: var(--m3d-fondo, #111);
+  color: var(--m3d-texto, #f2f2f2);
+  font-family: var(--m3d-fuente, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  line-height: 1.6;
+}
+.m3d-legal header, .m3d-legal main { max-width: 46rem; margin: 0 auto; padding: 1.5rem clamp(1rem, 4vw, 2rem); }
+.m3d-legal header a { color: var(--m3d-acento, #ffc62d); text-decoration: none; font-weight: 700; }
+.m3d-legal h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin: 1rem 0 1.5rem; }
+.m3d-legal h2 { font-size: 1.2rem; margin: 2rem 0 0.5rem; color: var(--m3d-acento, #ffc62d); }
+.m3d-legal a { color: inherit; text-underline-offset: 3px; }
+.m3d-legal dl { display: grid; gap: 0.6rem; margin: 1.5rem 0; }
+.m3d-legal dl div { display: grid; grid-template-columns: minmax(8rem, 12rem) 1fr; gap: 1rem; border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent); padding-top: 0.6rem; }
+.m3d-legal dt { opacity: 0.7; }
+.m3d-legal dd { margin: 0; }
+.m3d-legal__pie { margin-top: 3rem; opacity: 0.8; }
+@media (max-width: 520px) { .m3d-legal dl div { grid-template-columns: 1fr; gap: 0.1rem; } }

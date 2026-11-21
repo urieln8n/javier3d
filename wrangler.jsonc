@@ -1,10 +1,12 @@
 {
-  // Web estática (Next.js output: "export" → out/) servida por Cloudflare Workers.
-  // Build command en Cloudflare: npm run build · Deploy command: npx wrangler deploy
+  // Se publica la WEB PREMIUM 3D (carpeta web-premium/, HTML estático hecho con el Kit Webs 3D).
+  // No necesita build: en Cloudflare deja el Build command VACÍO; Deploy command: npx wrangler deploy
+  // La versión Next.js (v10) sigue en app/, components/, lib/... Para publicarla en su lugar:
+  // npm run build y cambia "directory" a "./out/".
   "name": "javier3d",
   "compatibility_date": "2026-11-21",
   "assets": {
-    "directory": "./out/",
+    "directory": "./web-premium/",
     "not_found_handling": "404-page"
   }
 }
