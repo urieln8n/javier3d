@@ -4,12 +4,12 @@
   <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JAVA — Hornos profesionales para pizza</title>
-  <meta name="description" content="Hornos profesionales para pizza JAVA. Ladrillo a ladrillo. Solicita tu presupuesto por WhatsApp.">
-  <meta name="theme-color" content="#102923">
+  <title>JAVA — Hornos profesionales para pizza · Ladrillo a ladrillo</title>
+  <meta name="description" content="Hornos profesionales para pizza JAVA: cúpula de mosaico y arco de ladrillo, hechos ladrillo a ladrillo. Elige tu acabado y pide presupuesto por WhatsApp.">
+  <meta name="theme-color" content="#0e0b09">
   <meta property="og:title" content="JAVA — Hornos profesionales para pizza">
-  <meta property="og:description" content="Ladrillo a ladrillo. El corazón de tu pizzería empieza aquí.">
-  <meta property="og:image" content="assets/java-og.jpg">
+  <meta property="og:description" content="Ladrillo a ladrillo. El horno que pone la pizza en el centro de tu negocio.">
+  <meta property="og:image" content="assets/fotos/catalogo-oro.webp">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <!-- Librerías servidas desde la propia web (herramientas/localizar.mjs): sin CDN externo -->
@@ -27,37 +27,93 @@
 
   <link rel="stylesheet" href="motor-3d/motor3d.css">
   <style>
-    /* Tipografías de la marca, servidas desde la propia web (OFL) */
+    /* Tipografías de la marca JAVA, servidas desde la propia web (OFL) */
     @font-face { font-family: "Bodoni Moda"; src: url("assets/fuentes/BodoniModa-Latin.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
     @font-face { font-family: "Bodoni Moda"; src: url("assets/fuentes/BodoniModa-Italic-Latin.woff2") format("woff2"); font-weight: 400 900; font-style: italic; font-display: swap; }
     @font-face { font-family: "Archivo"; src: url("assets/fuentes/Archivo-Latin.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+
+    /* Carbón y oro */
     :root {
-      --m3d-fondo: #102923;
-      --m3d-texto: #f5efdf;
-      --m3d-acento: #d6b387;
-      --m3d-sobre-acento: #102923;
+      --m3d-fondo: #0e0b09;
+      --m3d-texto: #f4ece0;
+      --m3d-acento: #d9a441;
+      --m3d-sobre-acento: #0e0b09;
       --m3d-fuente: "Archivo", system-ui, sans-serif;
       --m3d-fuente-titulos: "Bodoni Moda", Georgia, serif;
+      --j-brasa: #c4442b;
+      --j-oro-claro: #f1cf7e;
+      --j-linea: color-mix(in srgb, #f4ece0 14%, transparent);
     }
+    body { background: radial-gradient(120% 70% at 50% 0%, #241a12 0%, #0e0b09 55%) fixed, #0e0b09; }
+    /* grano fino para quitar el aspecto "plano" */
+    body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 80; opacity: .06; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
     .m3d-titulo { font-weight: 400; letter-spacing: -0.035em; }
-    .m3d-titulo em { font-style: italic; color: var(--m3d-acento); }
-    .m3d-boton--brasa { background: #a43e2d; color: #f5efdf; }
-    .m3d-cabecera__marca img { height: 30px; width: auto; }
-    .java-nota { font-size: .8rem; opacity: .65; margin-top: 1.25rem; max-width: 34rem; }
-    .java-proyectos { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: .75rem; }
-    .java-proyectos a { display: grid; grid-template-columns: 1fr auto; gap: .1rem 1rem; padding: 1rem 1.2rem; border: 1px solid color-mix(in srgb, var(--m3d-texto) 18%, transparent); border-radius: 14px; color: inherit; text-decoration: none; transition: border-color .2s, background .2s; }
-    .java-proyectos a:hover { border-color: var(--m3d-acento); background: color-mix(in srgb, var(--m3d-acento) 8%, transparent); }
-    .java-proyectos strong { font-family: var(--m3d-fuente-titulos); font-size: 1.45rem; font-weight: 400; }
-    .java-proyectos small { grid-column: 1; opacity: .7; }
-    .java-proyectos span { grid-row: 1 / 3; grid-column: 2; align-self: center; color: var(--m3d-acento); }
-    .java-faq { margin-top: 1.5rem; display: grid; gap: .5rem; }
-    .java-faq details { border-top: 1px solid color-mix(in srgb, var(--m3d-texto) 18%, transparent); padding: .9rem 0 .3rem; }
-    .java-faq summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
-    .java-faq summary::after { content: "+"; color: var(--m3d-acento); font-size: 1.3rem; line-height: 1; }
-    .java-faq details[open] summary::after { content: "–"; }
-    .java-faq p { opacity: .8; margin: .6rem 0 .4rem; }
-    .java-telefono { display: block; margin-top: 1rem; font-size: 1.1rem; letter-spacing: .04em; opacity: .85; }
-    .m3d-tarjeta img { aspect-ratio: 4 / 3; object-fit: contain; background: #f5efdf; border-radius: 10px; }
+    .m3d-titulo em { font-style: italic; background: linear-gradient(100deg, var(--j-oro-claro), var(--m3d-acento) 45%, #a8742a); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+    .m3d-etiqueta { letter-spacing: .28em; }
+    .m3d-boton--brasa { background: linear-gradient(180deg, #d4532f, var(--j-brasa)); color: #fff6ec; box-shadow: 0 10px 34px -10px rgba(212, 83, 47, .7); }
+    .m3d-cabecera { backdrop-filter: blur(10px); }
+    .m3d-cabecera__marca img { height: 28px; width: auto; }
+    .j-nav { display: flex; gap: 1.6rem; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; }
+    .j-nav a { color: inherit; text-decoration: none; opacity: .75; transition: opacity .2s, color .2s; }
+    .j-nav a:hover { opacity: 1; color: var(--m3d-acento); }
+    @media (max-width: 900px) { .j-nav { display: none; } }
+
+    .j-nota { font-size: .78rem; opacity: .6; margin-top: 1.2rem; max-width: 36rem; line-height: 1.5; }
+    .j-regla { display: flex; align-items: center; gap: .8rem; margin-top: 1.6rem; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: var(--m3d-acento); }
+    .j-regla::before { content: ""; width: 48px; height: 1px; background: var(--m3d-acento); }
+
+    /* El oficio: dos fotos reales enmarcadas */
+    .j-dupla { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 1.8rem; }
+    .j-dupla figure { margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--j-linea); background: #000; }
+    .j-dupla img { display: block; width: 100%; height: 260px; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+    .j-dupla figure:hover img { transform: scale(1.05); }
+    .j-dupla figcaption { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; padding: .6rem .8rem; opacity: .7; }
+
+    /* Acabados: escaparate de seis tarjetas con foto real */
+    #acabados { padding-top: 46vh; }
+    .j-acabados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; text-align: left; width: min(1100px, 100%); margin-inline: auto; }
+    @media (max-width: 860px) { .j-acabados { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .j-acabados { grid-template-columns: 1fr; } }
+    .j-acabado { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--j-linea); background: linear-gradient(180deg, #1a1410, #120e0b); transition: transform .4s, border-color .4s; }
+    .j-acabado:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--m3d-acento) 60%, transparent); }
+    .j-acabado img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #ece9e4; }
+    .j-acabado div { padding: 1rem 1.1rem 1.2rem; }
+    .j-acabado h3 { font-family: var(--m3d-fuente-titulos); font-weight: 400; font-size: 1.55rem; margin: 0 0 .25rem; }
+    .j-acabado p { margin: 0 0 .9rem; opacity: .72; font-size: .92rem; }
+    .j-acabado a { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--m3d-acento); text-decoration: none; }
+    .j-acabado a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .j-pastilla { position: absolute; top: .8rem; left: .8rem; width: 22px; height: 22px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+
+    /* Instalaciones: vídeo real de fondo + galería */
+    .j-fondo { position: fixed; inset: 0; z-index: -1; opacity: 0; transition: opacity 1.4s; pointer-events: none; }
+    .j-fondo.j-visible { opacity: 1; }
+    .j-fondo video { width: 100%; height: 100%; object-fit: cover; object-position: 12% 50%; filter: saturate(1.05) contrast(1.05); }
+    .j-fondo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(270deg, rgba(14,11,9,.97) 0%, rgba(14,11,9,.88) 44%, rgba(14,11,9,.25) 100%), linear-gradient(0deg, rgba(14,11,9,.9), transparent 40%); }
+    .j-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin-top: 1.8rem; }
+    .j-galeria img { width: 100%; height: 130px; object-fit: cover; border-radius: 12px; border: 1px solid var(--j-linea); transition: transform .6s, filter .6s; filter: saturate(.9); }
+    .j-galeria img:hover { transform: scale(1.04); filter: saturate(1.1); }
+    .j-galeria img.j-ancha { grid-column: span 2; }
+
+    .j-proyectos { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: .7rem; }
+    .j-proyectos a { display: grid; grid-template-columns: 1fr auto; gap: .1rem 1rem; padding: 1.05rem 1.25rem; border: 1px solid var(--j-linea); border-radius: 16px; color: inherit; text-decoration: none; background: rgba(255,255,255,.015); transition: border-color .25s, background .25s, transform .25s; }
+    .j-proyectos a:hover { border-color: var(--m3d-acento); background: color-mix(in srgb, var(--m3d-acento) 7%, transparent); transform: translateX(4px); }
+    .j-proyectos strong { font-family: var(--m3d-fuente-titulos); font-size: 1.5rem; font-weight: 400; }
+    .j-proyectos small { grid-column: 1; opacity: .65; }
+    .j-proyectos span { grid-row: 1 / 3; grid-column: 2; align-self: center; color: var(--m3d-acento); font-size: 1.2rem; }
+
+    .j-faq { margin-top: 1.4rem; }
+    .j-faq details { border-top: 1px solid var(--j-linea); padding: 1rem 0 .4rem; }
+    .j-faq details:last-child { border-bottom: 1px solid var(--j-linea); }
+    .j-faq summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+    .j-faq summary::-webkit-details-marker { display: none; }
+    .j-faq summary::after { content: "+"; color: var(--m3d-acento); font-size: 1.3rem; line-height: 1; transition: transform .3s; }
+    .j-faq details[open] summary::after { transform: rotate(45deg); }
+    .j-faq p { opacity: .75; margin: .6rem 0 .5rem; }
+    .j-telefono { display: inline-block; margin-top: 1.1rem; font-size: 1.05rem; letter-spacing: .08em; opacity: .8; }
+    .m3d-pie { border-top: 1px solid var(--j-linea); }
+    .j-pie-marca { height: 34px; width: auto; opacity: .9; margin-bottom: .6rem; }
   </style>
 </head>
 <body data-whatsapp="34645466308" data-negocio="JAVA">
@@ -70,130 +126,165 @@
     <a class="m3d-cabecera__marca" href="#inicio" aria-label="JAVA, inicio">
       <img src="assets/java-wordmark-compact.svg" alt="">
     </a>
+    <nav class="j-nav" aria-label="Principal">
+      <a href="#ladrillo">El oficio</a>
+      <a href="#acabados">Acabados</a>
+      <a href="#obras">Instalaciones</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
     <a class="m3d-boton" href="#" data-whatsapp-texto="Hola, me gustaría solicitar información sobre los hornos JAVA para mi proyecto profesional.">Solicitar presupuesto</a>
   </header>
 
+  <!-- Fondo de vídeo real (horno JAVA trabajando en un restaurante): solo se enciende en la sección de instalaciones -->
+  <div class="j-fondo" aria-hidden="true">
+    <video src="assets/fotos/obra-video.mp4" poster="assets/fotos/obra-video-poster.jpg" muted loop playsinline preload="none"></video>
+  </div>
+
   <canvas id="escena3d"></canvas>
 
-  <!-- Objeto estrella: horno JAVA de mosaico dorado, MAQUETA modelada por código a partir de la fotografía
-       de la referencia 01. No es un modelo técnico: el despiece es ilustrativo. La definitiva se genera desde
-       fotos originales (Higgsfield / TRELLIS) cuando JAVA las facilite. -->
+  <!-- Hornos 3D: MAQUETAS modeladas por código a partir de las fotografías de catálogo de JAVA (oro, negro, rojo,
+       tricolor, blanco). No son modelos técnicos; el despiece es ilustrativo. -->
   <main data-motor3d
         data-draco="libs/three/examples/jsm/libs/draco/gltf/"
         data-modelo="assets/producto.glb"
-        data-acento="#d6b387"
-        data-fondo="#102923"
+        data-acento="#d9a441"
+        data-fondo="#0e0b09"
         data-objetos='[
-          {"id":"logo","tipo":"logo","src":"assets/logo-3d.svg"},
-          {"id":"brasas","tipo":"particulas","cantidad":110,"tamano":0.05}
+          {"id":"logo","tipo":"logo","src":"assets/logo-3d.svg","grosor":0.1},
+          {"id":"brasas","tipo":"particulas","cantidad":150,"tamano":0.045,"color":"#ff8a3d"},
+          {"id":"negro","tipo":"glb","src":"assets/horno-negro.glb"},
+          {"id":"rojo","tipo":"glb","src":"assets/horno-rojo.glb"},
+          {"id":"tricolor","tipo":"glb","src":"assets/horno-tricolor.glb"},
+          {"id":"blanco","tipo":"glb","src":"assets/horno-blanco.glb"}
         ]'>
 
     <!-- 1 · APERTURA -->
     <section id="inicio" class="m3d-seccion m3d-seccion--centro m3d-seccion--hero"
-             data-3d='{"rot": [14, -113, 0], "pos": [0, 0.85, 0], "escala": 0.72, "cam": [0, 0, 6.6], "mira": [0, 0, 0], "explota": 0, "luz": 1.15, "objetos": {"brasas": {"opacidad": 0.55}}}'>
+             data-3d='{"rot":[14,-113,0],"pos":[0,0.85,0],"escala":0.78,"cam":[0,0,6.6],"mira":[0,0,0],"explota":0,"luz":1.2,
+                       "objetos":{"brasas":{"opacidad":0.8},"logo":{"opacidad":0},"negro":{"opacidad":0,"escala":0.01},"rojo":{"opacidad":0,"escala":0.01},"tricolor":{"opacidad":0,"escala":0.01},"blanco":{"opacidad":0,"escala":0.01}}}'>
       <div class="m3d-hero-entra">
         <span class="m3d-etiqueta">Hornos profesionales para pizza</span>
         <h1 class="m3d-titulo m3d-titulo--xl m3d-split">Ladrillo a <em>ladrillo.</em></h1>
-        <p class="m3d-texto m3d-texto--grande">El corazón de tu pizzería empieza aquí. Encuentra tu horno JAVA.</p>
+        <p class="m3d-texto m3d-texto--grande">Cúpula de mosaico, arco de ladrillo y el fuego en el centro de tu pizzería.</p>
         <div class="m3d-botones">
           <a class="m3d-boton m3d-boton--brasa m3d-pulso" href="#" data-whatsapp-texto="Hola, me gustaría solicitar un presupuesto de un horno JAVA para mi pizzería.">Solicitar presupuesto</a>
-          <a class="m3d-boton m3d-boton--fantasma" href="#modelos">Encuentra tu JAVA</a>
+          <a class="m3d-boton m3d-boton--fantasma" href="#acabados">Ver acabados</a>
         </div>
       </div>
       <div class="m3d-pista">Desliza</div>
     </section>
 
     <!-- 2 · MANIFIESTO -->
-    <section id="por-que-java" class="m3d-seccion m3d-seccion--izq"
-             data-3d='{"rot": [12, -53, 0], "pos": [1.4, -0.1, 0], "escala": 1, "cam": [0, 0.2, 6], "objetos": {"logo": {"pos": [1.5, 1.25, -0.8], "rot": [0, -18, 0], "escala": 0.55, "opacidad": 1}}}'>
+    <section id="alma" class="m3d-seccion m3d-seccion--izq"
+             data-3d='{"rot":[12,-53,0],"pos":[1.45,-0.15,0],"escala":1,"cam":[0,0.2,6],
+                       "objetos":{"logo":{"pos":[1.5,1.3,-0.8],"rot":[0,-18,0],"escala":0.55,"opacidad":1},"brasas":{"opacidad":0.5}}}'>
       <span class="m3d-etiqueta m3d-reveal">Más que una elección</span>
       <h2 class="m3d-titulo m3d-reveal">Una pizzería tiene alma. <em>El horno, su lugar.</em></h2>
-      <p class="m3d-texto m3d-reveal">El punto de partida de una nueva idea. La pieza que buscas al renovar. El horno que quieres poner en el centro de tu negocio.</p>
-      <div class="m3d-botones m3d-reveal">
-        <a class="m3d-boton m3d-boton--fantasma" href="#" data-whatsapp-texto="Hola, quiero hablar de mi proyecto de pizzería con JAVA.">Hablemos de tu proyecto</a>
+      <p class="m3d-texto m3d-reveal">El punto de partida de una nueva idea. La pieza que buscas al renovar. El horno que quieres poner a la vista de todos.</p>
+      <span class="j-regla m3d-reveal">Tu proyecto. Tu horno. JAVA.</span>
+    </section>
+
+    <!-- 3 · EL OFICIO: fotos reales de la construcción + el horno abriéndose -->
+    <section id="ladrillo" class="m3d-seccion m3d-seccion--der"
+             data-3d='{"rot":[18,25,0],"pos":[-1.75,-0.1,0],"escala":0.82,"cam":[0,0.3,5.6],"mira":[-0.2,0,0],"explota":0.32,"luz":1.3,
+                       "objetos":{"logo":{"opacidad":0}}}'>
+      <span class="m3d-etiqueta m3d-reveal">El oficio</span>
+      <h2 class="m3d-titulo m3d-reveal">Así se levanta <em>un JAVA.</em></h2>
+      <p class="m3d-texto m3d-reveal">La cúpula, el arco y la base, pieza a pieza. Debajo del mosaico, ladrillo a ladrillo.</p>
+      <div class="j-dupla m3d-reveal">
+        <figure><img src="assets/fotos/ladrillo.webp" alt="Estructura de ladrillo de un horno JAVA vista de frente" loading="lazy"><figcaption>La estructura</figcaption></figure>
+        <figure><img src="assets/fotos/ladrillo-mosaico.webp" alt="Horno JAVA terminado con mosaico de piezas amarillas y naranjas y arco de ladrillo" loading="lazy"><figcaption>El acabado</figcaption></figure>
+      </div>
+      <p class="j-nota m3d-reveal">El horno en 3D es una maqueta conceptual: el despiece es ilustrativo, no técnico.</p>
+    </section>
+
+    <!-- 4 · ACABADOS: cinco hornos 3D a la vez + seis fotos reales de catálogo -->
+    <section id="acabados" class="m3d-seccion m3d-seccion--centro"
+             data-3d='{"rot":[12,-15,0],"pos":[0,1.15,0],"escala":0.5,"cam":[0,0,7.6],"mira":[0,0.4,0],"explota":0,"luz":1.25,
+                       "objetos":{"brasas":{"opacidad":0.25},
+                         "negro":{"pos":[-1.75,1.0,-0.6],"rot":[12,5,0],"escala":0.4,"opacidad":1},
+                         "rojo":{"pos":[1.75,1.0,-0.6],"rot":[12,-35,0],"escala":0.4,"opacidad":1},
+                         "tricolor":{"pos":[-3.3,0.85,-1.4],"rot":[12,20,0],"escala":0.36,"opacidad":1},
+                         "blanco":{"pos":[3.3,0.85,-1.4],"rot":[12,-50,0],"escala":0.36,"opacidad":1}}}'>
+      <span class="m3d-etiqueta m3d-reveal">Acabados</span>
+      <h2 class="m3d-titulo m3d-reveal">Un horno. <em>Tu color.</em></h2>
+      <p class="m3d-texto m3d-reveal">Mosaico dorado, trencadís, negro, tricolor… Elige el que encaja con tu local.</p>
+      <div class="j-acabados">
+        <article class="j-acabado m3d-reveal"><span class="j-pastilla" style="background:#d9a441"></span><img src="assets/fotos/catalogo-oro.webp" alt="Horno JAVA con mosaico dorado y arco de ladrillo" loading="lazy"><div><h3>Oro</h3><p>Mosaico dorado. Se ve desde la calle.</p><a href="#" data-whatsapp-texto="Hola, me interesa un horno JAVA en acabado oro (mosaico dorado). ¿Me podéis pasar información y presupuesto?">Lo quiero así ↗</a></div></article>
+        <article class="j-acabado m3d-reveal"><span class="j-pastilla" style="background:#c8202a"></span><img src="assets/fotos/acabado-rojo.webp" alt="Horno JAVA con trencadís rojo y blanco" loading="lazy"><div><h3>Rojo</h3><p>Trencadís rojo sobre blanco.</p><a href="#" data-whatsapp-texto="Hola, me interesa un horno JAVA en acabado rojo (trencadís). ¿Me podéis pasar información y presupuesto?">Lo quiero así ↗</a></div></article>
+        <article class="j-acabado m3d-reveal"><span class="j-pastilla" style="background:#1c1c1e"></span><img src="assets/fotos/acabado-negro.webp" alt="Horno JAVA con mosaico negro" loading="lazy"><div><h3>Negro</h3><p>Mosaico negro, sobrio y elegante.</p><a href="#" data-whatsapp-texto="Hola, me interesa un horno JAVA en acabado negro. ¿Me podéis pasar información y presupuesto?">Lo quiero así ↗</a></div></article>
+        <article class="j-acabado m3d-reveal"><span class="j-pastilla" style="background:linear-gradient(90deg,#228040 33%,#fff 33% 66%,#c4222a 66%)"></span><img src="assets/fotos/acabado-tricolor.webp" alt="Horno JAVA con mosaico blanco y negro y banda verde, blanca y roja" loading="lazy"><div><h3>Tricolor</h3><p>Banda verde, blanca y roja. Italia en tu local.</p><a href="#" data-whatsapp-texto="Hola, me interesa un horno JAVA en acabado tricolor. ¿Me podéis pasar información y presupuesto?">Lo quiero así ↗</a></div></article>
+        <article class="j-acabado m3d-reveal"><span class="j-pastilla" style="background:#f2efe9"></span><img src="assets/fotos/acabado-blanco.webp" alt="Horno JAVA con trencadís blanco, detalle tricolor y base de granito negro" loading="lazy"><div><h3>Blanco</h3><p>Trencadís blanco con piezas tostadas.</p><a href="#" data-whatsapp-texto="Hola, me interesa un horno JAVA en acabado blanco (trencadís). ¿Me podéis pasar información y presupuesto?">Lo quiero así ↗</a></div></article>
+        <article class="j-acabado m3d-reveal"><span class="j-pastilla" style="background:#c0502c"></span><img src="assets/fotos/acabado-terracota.webp" alt="Horno JAVA en acabado terracota con arco de ladrillo y puerta" loading="lazy"><div><h3>Terracota</h3><p>Liso, cálido, con el arco de ladrillo a la vista.</p><a href="#" data-whatsapp-texto="Hola, me interesa un horno JAVA en acabado terracota. ¿Me podéis pasar información y presupuesto?">Lo quiero así ↗</a></div></article>
+      </div>
+      <p class="j-nota m3d-reveal" style="margin-inline:auto">Fotografías reales de hornos JAVA. Colores, medidas y disponibilidad a confirmar al pedir presupuesto.</p>
+    </section>
+
+    <!-- 5 · INSTALACIONES: vídeo real de fondo + galería de fotos reales -->
+    <section id="obras" class="m3d-seccion m3d-seccion--der"
+             data-3d='{"rot":[12,40,0],"pos":[0,-7,-2],"escala":0.02,"cam":[0,0,6.4],"mira":[0,0,0],"luz":1,
+                       "objetos":{"brasas":{"opacidad":0},"negro":{"opacidad":0,"escala":0.01},"rojo":{"opacidad":0,"escala":0.01},"tricolor":{"opacidad":0,"escala":0.01},"blanco":{"opacidad":0,"escala":0.01}}}'>
+      <span class="m3d-etiqueta m3d-reveal">Instalaciones</span>
+      <h2 class="m3d-titulo m3d-reveal">En pizzerías <em>de verdad.</em></h2>
+      <p class="m3d-texto m3d-reveal">Hornos JAVA encendidos cada día en pizzerías, restaurantes y terrazas.</p>
+      <div class="j-galeria m3d-reveal">
+        <img class="j-ancha" src="assets/fotos/obra-1.webp" alt="Horno JAVA dorado instalado al fondo de la cocina de una pizzería" loading="lazy">
+        <img src="assets/fotos/obra-6.webp" alt="Horno JAVA de trencadís rojo en una pizzería" loading="lazy">
+        <img src="assets/fotos/obra-2.webp" alt="Horno JAVA dorado en una terraza junto a la zona de trabajo" loading="lazy">
+        <img class="j-ancha" src="assets/fotos/obra-5.webp" alt="Pizzero trabajando frente a un horno JAVA dorado" loading="lazy">
+        <img class="j-ancha" src="assets/fotos/feria.webp" alt="Hornos JAVA de varios acabados expuestos en una feria" loading="lazy">
+        <img src="assets/fotos/obra-3.webp" alt="Horno JAVA blanco con detalle tricolor recién instalado en un local" loading="lazy">
       </div>
     </section>
 
-    <!-- 3 · LA COLECCIÓN: dos referencias reales con sus fotografías -->
-    <section id="modelos" class="m3d-seccion m3d-seccion--der"
-             data-3d='{"rot": [16, 65, 0], "pos": [-1.8, 0.1, 0], "escala": 0.85, "cam": [0, 0, 6], "objetos": {"logo": {"opacidad": 0}}}'>
-      <span class="m3d-etiqueta m3d-reveal">La colección visual</span>
-      <h2 class="m3d-titulo m3d-reveal">Dos expresiones. <em>Un nombre.</em></h2>
-      <p class="m3d-texto m3d-reveal">Empieza por lo que ves. Cuéntanos después lo que necesitas.</p>
-      <div class="m3d-rejilla">
-        <article class="m3d-tarjeta m3d-reveal">
-          <img src="assets/java-gold-reference.webp" alt="Horno JAVA con cúpula de mosaico dorado, arco de ladrillo y base negra" loading="lazy">
-          <h3>Carácter dorado.</h3>
-          <p>Un horno que también forma parte de la identidad de tu pizzería.</p>
-          <a class="m3d-boton m3d-boton--fantasma" href="#" data-whatsapp-texto="Hola, me interesa la referencia 01 de JAVA (Carácter dorado). ¿Me podéis pasar información y presupuesto?">Consultar esta referencia</a>
-        </article>
-        <article class="m3d-tarjeta m3d-reveal">
-          <img src="assets/java-italia-reference.webp" alt="Horno JAVA con cúpula de mosaico blanco y detalle tricolor, arco de ladrillo y base de granito negro" loading="lazy">
-          <h3>Espíritu italiano.</h3>
-          <p>Una presencia tricolor para poner la pizza en el centro de tu negocio.</p>
-          <a class="m3d-boton m3d-boton--fantasma" href="#" data-whatsapp-texto="Hola, me interesa la referencia 02 de JAVA (Espíritu italiano). ¿Me podéis pasar información y presupuesto?">Consultar esta referencia</a>
-        </article>
-      </div>
-      <p class="java-nota m3d-reveal">Fotografías de las referencias JAVA. Denominación comercial, configuración y especificaciones a confirmar al solicitar información.</p>
-    </section>
-
-    <!-- 4 · PIEZA A PIEZA: la cámara se acerca y el horno se abre (maqueta conceptual) -->
-    <section id="pieza-a-pieza" class="m3d-seccion m3d-seccion--izq"
-             data-3d='{"rot": [18, 245, 0], "pos": [1.6, -0.1, 0], "escala": 1.0, "cam": [0, 0.3, 5.4], "mira": [0.3, 0, 0], "explota": 0.3, "luz": 1.3}'>
-      <span class="m3d-etiqueta m3d-reveal">Pieza a pieza</span>
-      <h2 class="m3d-titulo m3d-reveal">Míralo desde <em>otra perspectiva.</em></h2>
-      <ol class="m3d-puntos">
-        <li class="m3d-reveal"><strong>La cúpula</strong><span>El mosaico que da carácter a cada horno.</span></li>
-        <li class="m3d-reveal"><strong>El arco</strong><span>La boca de ladrillo, el gesto que reconoces.</span></li>
-        <li class="m3d-reveal"><strong>La base</strong><span>El apoyo que lo pone en el centro de tu local.</span></li>
-      </ol>
-      <p class="java-nota m3d-reveal">Maqueta conceptual · despiece ilustrativo, no técnico. Para elegir, consulta las fotografías y confirma los datos con JAVA.</p>
-    </section>
-
-    <!-- 5 · TU PROYECTO -->
+    <!-- 6 · TU PROYECTO -->
     <section id="proyecto" class="m3d-seccion m3d-seccion--der"
-             data-3d='{"rot": [14, 330, 0], "pos": [-1.35, 0.05, 0], "escala": 1, "cam": [0, 0, 6], "mira": [0, 0, 0], "explota": 0, "luz": 1.1}'>
+             data-3d='{"rot":[14,245,0],"pos":[-1.4,0.05,0],"escala":1,"cam":[0,0,6],"mira":[0,0,0],"explota":0,"luz":1.15,
+                       "objetos":{"brasas":{"opacidad":0.45}}}'>
       <span class="m3d-etiqueta m3d-reveal">Sea cual sea tu próximo paso</span>
       <h2 class="m3d-titulo m3d-reveal">Hay un proyecto <em>detrás de cada horno.</em></h2>
       <p class="m3d-texto m3d-reveal">Cuéntanos el tuyo. Empezamos por ahí.</p>
-      <ul class="java-proyectos m3d-reveal">
+      <ul class="j-proyectos m3d-reveal">
         <li><a href="#" data-whatsapp-texto="Hola, estoy abriendo una pizzería y me gustaría información sobre los hornos JAVA. Ciudad: ___"><strong>Todo por empezar.</strong><small>Estoy abriendo una pizzería</small><span>↗</span></a></li>
         <li><a href="#" data-whatsapp-texto="Hola, quiero renovar el horno de mi pizzería y me gustaría información sobre JAVA. Ciudad: ___"><strong>Un nuevo capítulo.</strong><small>Quiero renovar mi horno</small><span>↗</span></a></li>
         <li><a href="#" data-whatsapp-texto="Hola, tengo otro proyecto de hostelería y me gustaría información sobre los hornos JAVA. Ciudad: ___"><strong>Una idea diferente.</strong><small>Otro proyecto de hostelería</small><span>↗</span></a></li>
       </ul>
     </section>
 
-    <!-- 6 · PREGUNTAS -->
+    <!-- 7 · PREGUNTAS -->
     <section id="preguntas" class="m3d-seccion m3d-seccion--izq"
-             data-3d='{"rot": [10, 455, 0], "pos": [1.5, -0.2, 0], "escala": 0.8, "cam": [0, 0, 6.2]}'>
+             data-3d='{"rot":[10,330,0],"pos":[1.55,-0.2,0],"escala":0.82,"cam":[0,0,6.2]}'>
       <span class="m3d-etiqueta m3d-reveal">Antes de encenderlo todo</span>
       <h2 class="m3d-titulo m3d-reveal">Buenas preguntas. <em>Una conversación.</em></h2>
-      <div class="java-faq m3d-reveal">
-        <details><summary>¿Cómo solicito un presupuesto?</summary><p>Escríbenos por WhatsApp con tu nombre, tu ciudad y tu proyecto. El mensaje sale preparado: solo tienes que revisarlo y enviarlo.</p></details>
-        <details><summary>¿Qué debo tener en cuenta para elegir?</summary><p>El espacio de tu local, el tipo de proyecto y el horno que te interesa son un buen punto de partida. Confirma con nosotros las dimensiones, la configuración y las condiciones de compra antes de decidir.</p></details>
-        <details><summary>¿Dónde puedo consultar las especificaciones?</summary><p>Escríbenos por WhatsApp e indica la referencia que te interesa. Las medidas y los datos técnicos se confirman para tu proyecto; las fotografías por sí solas no los determinan.</p></details>
-        <details><summary>¿El horno en 3D es un modelo real?</summary><p>Es una representación conceptual hecha a partir de la fotografía. Sirve para explorar la forma, pero no acredita la construcción, los materiales ni las prestaciones de un modelo.</p></details>
+      <div class="j-faq m3d-reveal">
+        <details><summary>¿Cómo pido presupuesto?</summary><p>Pulsa cualquier botón de WhatsApp: el mensaje sale preparado. Añade tu nombre, tu ciudad y tu proyecto, revísalo y envíalo.</p></details>
+        <details><summary>¿Qué acabados puedo elegir?</summary><p>En esta página ves seis acabados reales: oro, rojo, negro, tricolor, blanco y terracota. Pregúntanos por el que te encaje y confirma con nosotros colores y disponibilidad.</p></details>
+        <details><summary>¿Qué tengo que tener en cuenta para elegir?</summary><p>El espacio de tu local, el tipo de proyecto y el horno que te interesa. Las medidas, la configuración y las condiciones se confirman para tu caso antes de decidir.</p></details>
+        <details><summary>¿Los hornos en 3D son modelos reales?</summary><p>Son representaciones hechas a partir de las fotografías de nuestros hornos. Sirven para explorar la forma y los acabados, pero no acreditan medidas, materiales ni prestaciones.</p></details>
       </div>
     </section>
 
-    <!-- 7 · CIERRE -->
+    <!-- 8 · CIERRE -->
     <section id="presupuesto" class="m3d-seccion m3d-seccion--centro m3d-seccion--abajo"
-             data-3d='{"rot": [14, 607, 0], "pos": [0, 0.75, 0], "escala": 0.58, "cam": [0, 0, 6.6], "mira": [0, 0, 0], "explota": 0, "luz": 1.2, "objetos": {"logo": {"pos": [0, 1.55, -0.6], "rot": [0, 0, 0], "escala": 0.45, "opacidad": 1}, "brasas": {"opacidad": 0.55}}}'>
+             data-3d='{"rot":[14,607,0],"pos":[0,0.75,0],"escala":0.62,"cam":[0,0,6.6],"mira":[0,0,0],"explota":0,"luz":1.25,
+                       "objetos":{"logo":{"pos":[0,1.6,-0.6],"rot":[0,0,0],"escala":0.45,"opacidad":1},"brasas":{"opacidad":0.8}}}'>
       <span class="m3d-etiqueta m3d-reveal">El próximo JAVA puede ser el tuyo</span>
       <h2 class="m3d-titulo m3d-titulo--xl m3d-reveal">Hablemos de tu <em>pizzería.</em></h2>
       <p class="m3d-texto m3d-texto--grande m3d-reveal">Una idea, una apertura, un cambio. Cuéntanos qué tienes entre manos.</p>
       <div class="m3d-botones m3d-reveal" style="justify-content:center">
-        <a class="m3d-boton m3d-boton--brasa m3d-pulso" href="#" data-whatsapp-texto="Hola, me gustaría solicitar un presupuesto de un horno JAVA. Nombre: ___ · Ciudad: ___ · Proyecto: ___">Solicitar presupuesto por WhatsApp</a>
+        <a class="m3d-boton m3d-boton--brasa m3d-pulso" href="#" data-whatsapp-texto="Hola, me gustaría solicitar un presupuesto de un horno JAVA. Nombre: ___ · Ciudad: ___ · Proyecto: ___ · Acabado: ___">Solicitar presupuesto por WhatsApp</a>
       </div>
-      <span class="java-telefono m3d-reveal">+34 645 466 308</span>
+      <span class="j-telefono m3d-reveal">+34 645 466 308</span>
     </section>
 
   </main>
 
   <footer class="m3d-pie">
+    <img class="j-pie-marca" src="assets/java-wordmark-compact.svg" alt="JAVA">
     <nav>
-      <a href="#modelos">Los hornos</a>
-      <a href="#proyecto">Tu proyecto</a>
+      <a href="#ladrillo">El oficio</a>
+      <a href="#acabados">Acabados</a>
+      <a href="#obras">Instalaciones</a>
       <a href="#preguntas">Preguntas</a>
     </nav>
     <div>JAVA · Hornos profesionales para pizza · Ladrillo a ladrillo.</div>
@@ -204,6 +295,17 @@
     </nav>
   </footer>
 
+  <script>
+    // Fondo de vídeo: se enciende (y se reproduce) solo mientras la sección de instalaciones está en pantalla
+    (() => {
+      const fondo = document.querySelector('.j-fondo'), video = fondo.querySelector('video'), obras = document.getElementById('obras');
+      const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      new IntersectionObserver((es) => es.forEach((e) => {
+        fondo.classList.toggle('j-visible', e.isIntersecting);
+        if (e.isIntersecting && !quieto) { video.preload = 'auto'; video.play().catch(() => {}); } else video.pause();
+      }), { threshold: 0.25 }).observe(obras);
+    })();
+  </script>
   <script type="module" src="motor-3d/motor3d.js"></script>
   <script src="motor-3d/pedido.js" defer></script>
 </body>
